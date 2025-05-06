@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+:root {
+  --testpro-green: #347f3d;
+}
