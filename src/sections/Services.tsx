@@ -10,6 +10,8 @@ import {
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
 
+import servicesImage from "../assets/services.jpg";
+
 const services = [
   {
     icon: BuildingOffice2Icon,
@@ -17,7 +19,7 @@ const services = [
     description:
       "Compressive strength, flexural strength, workability, consistency, and density testing to evaluate concrete quality.",
     detail:
-      "We test compressive & flexural strength, workability, consistency, and density - including flow tests, slump tests, and specimen curing.",
+      "We evaluate the strength, durability, and overall quality of concrete, using cutting-edge equipment and industry-standard methods to test compressive strength, flexural strength, workability, consistency, and density.",
   },
   {
     icon: MapIcon,
@@ -25,7 +27,7 @@ const services = [
     description:
       "Marshall stability, flow and quotient, penetration of bitumen, and viscosity testing for asphalt mix design.",
     detail:
-      "Mix design, stability, flow, and density testing, plus Marshall stability & quotient, bitumen penetration, and viscosity.",
+      "We offer comprehensive asphalt testing, including tests for mix design, stability, flow, and density, as well as tests to evaluate resistance to water and air, such as Marshall stability, bitumen penetration, and viscosity.",
   },
   {
     icon: GlobeAltIcon,
@@ -33,7 +35,7 @@ const services = [
     description:
       "Hydrometer, flow curve, maximum dry density, moisture content, and particle size analysis.",
     detail:
-      "Particle size distribution, compaction, shear strength, and permeability — hydrometer, flow curve, and moisture content tests.",
+      "We provide a wide range of soil and gravel testing to evaluate particle size distribution, compaction, shear strength, and permeability, using advanced equipment and industry-standard methods including hydrometer and flow curve testing.",
   },
   {
     icon: CubeIcon,
@@ -41,7 +43,7 @@ const services = [
     description:
       "Particle size analysis, sand equivalent value, durability index, and shrinkage & expansion testing.",
     detail:
-      "Particle size analysis by sieving, sand equivalent value, durability index, and shrinkage & expansion of cement-aggregate mixes.",
+      "We test particle size distribution, abrasion resistance, and specific gravity, helping to ensure the aggregates used in your construction project meet industry standards and performance expectations.",
   },
   {
     icon: WrenchScrewdriverIcon,
@@ -49,7 +51,7 @@ const services = [
     description:
       "Borrow pit investigation, centre line investigation, and geotechnical investigation on-site.",
     detail:
-      "On-site evaluation of soil compaction, asphalt density, and concrete strength - including borrow pit and geotechnical investigations.",
+      "We evaluate the quality and performance of construction materials on-site, using advanced equipment to test soil compaction, asphalt density, and concrete strength, helping to prevent costly delays or safety hazards.",
   },
   {
     icon: BeakerIcon,
@@ -57,7 +59,7 @@ const services = [
     description:
       "Representative sampling of premixed asphalt and freshly mixed concrete for accurate lab results.",
     detail:
-      "Representative sampling of soil, concrete, asphalt, and aggregates, carefully handled and transported for accurate lab results.",
+      "We ensure the accuracy and representativeness of construction material samples, using industry-standard methods to collect, carefully handle, and transport samples of soil, concrete, asphalt, and aggregates to our laboratory for testing.",
   },
   {
     icon: ClipboardDocumentCheckIcon,
@@ -65,7 +67,7 @@ const services = [
     description:
       "Bedding and compactibility testing, in situ percolation testing, and more.",
     detail:
-      "Bedding & compactibility testing, in situ percolation testing, and other specialist test methods on request.",
+      "We also provide a range of other test methods, including bedding and compactibility testing and in situ percolation testing, giving comprehensive insight into the quality and condition of construction materials and structures.",
   },
 ];
 
@@ -87,7 +89,7 @@ function ServiceCard({ icon: Icon, title, description, detail }: Service) {
         <h3 className="font-geologica text-lg font-bold text-charcoal">{title}</h3>
       </div>
 
-      <div className="relative mt-4 h-32 sm:h-36 overflow-hidden">
+      <div className="relative mt-4 h-40 sm:h-44 overflow-hidden">
         <div
           className={`absolute inset-0 flex flex-col transition-transform duration-300 ease-in-out ${
             expanded ? "-translate-x-full" : "translate-x-0"
@@ -125,8 +127,17 @@ function ServiceCard({ icon: Icon, title, description, detail }: Service) {
 
 function Services() {
   return (
-    <section id="services" className="bg-charcoal py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative py-16 sm:py-24">
+      <img
+        src={servicesImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-charcoal/80" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-geologica text-3xl sm:text-4xl font-bold text-white text-center">
           Our Services
         </h2>

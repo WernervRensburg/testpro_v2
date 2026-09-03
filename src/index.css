@@ -11,3 +11,21 @@
   --color-charcoal: #1f1f1f;
   --color-charcoal-dark: #2c2c2c;
 }
+
+/* Keeps #section anchor jumps from landing behind the sticky navbar, sized to its
+   height, which itself changes because the utility bar wraps to 2 lines on mobile. */
+html {
+  scroll-padding-top: 140px;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 116px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

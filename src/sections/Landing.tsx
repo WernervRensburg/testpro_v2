@@ -38,7 +38,7 @@ function Landing() {
           </div>
         </div>
 
-        {/* Image — swap for your own photo: drop it in src/assets (e.g. hero.jpg), add
+        {/* Image, swap for your own photo: drop it in src/assets (e.g. hero.jpg), add
             `import heroImage from "../assets/hero.jpg";` at the top of this file, then set
             src={heroImage} below instead of the placehold.co URL. */}
         <div className="min-[1100px]:absolute min-[1100px]:inset-0 min-[1100px]:z-0">
@@ -52,7 +52,7 @@ function Landing() {
           </div>
         </div>
 
-        {/* Gradient overlay, desktop only — keeps the card legible against the photo */}
+        {/* Gradient overlay, desktop only, keeps the card legible against the photo */}
         <div className="hidden min-[1100px]:block min-[1100px]:absolute min-[1100px]:inset-0 min-[1100px]:z-10 bg-gradient-to-l from-black/50 via-black/10 to-transparent" />
       </div>
     </section>

@@ -8,10 +8,32 @@ function Contact() {
   const [number, setNumber] = useState("");
   const [subject, setSubject] = useState("");
   const [query, setQuery] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  // No quote-request backend is wired up yet — replace with a real endpoint before shipping.
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus("sending");
+
+    try {
+      // TEMP: spoofed success for previewing the flow. Remove and restore the real
+      // fetch("/api/contact", ...) call below once Resend is set up.
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      // const res = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ name, email, number, subject, query }),
+      // });
+      // if (!res.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      setName("");
+      setEmail("");
+      setNumber("");
+      setSubject("");
+      setQuery("");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -62,6 +84,7 @@ function Contact() {
             <Input
               type="text"
               placeholder="Name"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -69,6 +92,7 @@ function Contact() {
             <Input
               type="email"
               placeholder="Email"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -90,16 +114,29 @@ function Contact() {
             <Textarea
               placeholder="Query"
               rows={5}
+              required
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
             />
             <Button
               type="submit"
-              className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-primary-dark transition-colors"
+              disabled={status === "sending"}
+              className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-primary-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Submit
+              {status === "sending" ? "Sending…" : "Submit"}
             </Button>
+
+            {status === "sent" && (
+              <p className="text-sm text-primary" role="status">
+                Thanks, your message has been sent. We'll get back to you shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-600" role="alert">
+                Something went wrong sending your message. Please try again, or call us directly.
+              </p>
+            )}
           </form>
         </div>
       </div>

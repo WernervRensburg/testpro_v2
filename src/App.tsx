@@ -14,7 +14,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Landing />
+      <div className="h-2 bg-gradient-to-r from-primary-dark to-primary" />
       <Description />
+      <div className="h-2 bg-gradient-to-r from-primary-dark to-primary" />
       <Services />
       <Projects />
       <Contact />

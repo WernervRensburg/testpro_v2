@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
+import n2CircleImage from "../assets/n2CircleHartland.jpg";
+import renosterbosImage from "../assets/renosterbos.jpg";
+import hartlandImage from "../assets/HartlandLifestyleEstate.png";
+import fynbosHeightsImage from "../assets/FynbosHeights.jpg";
+
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
   const [inView, setInView] = useState(false);
@@ -27,12 +32,14 @@ type Project = {
   title: string;
   summary: string;
   details: string[];
+  image: string;
 };
 
 const projects: Project[] = [
   {
     title: "N2 Traffic Circle, Hartland",
     summary: "Access infrastructure off the N2 highway at Hartenbos, completed December 2021.",
+    image: n2CircleImage,
     details: [
       "This infrastructure project was initiated to provide access to Hartenbos off the N2 highway. It will also provide access to the new filling station under construction as well as the Hartland Lifestyle Estate. The project took 3 months to complete and was finished in December 2021.",
       "Civil Contractor: Urwhebo e-Transand",
@@ -42,6 +49,7 @@ const projects: Project[] = [
   {
     title: "Renosterbos Estate",
     summary: "Private development north of Hartenbos with residences, a retirement village, and frail care facilities.",
+    image: renosterbosImage,
     details: [
       "Renosterbos Estate is a private development situated on the north facing slopes west of the beautiful town of Hartenbos. It includes a selection of private residences, a retirement village component as well as assisted living with frail care facilities.",
       "Consulting Civil Engineer: Niel Lyners & Associates",
@@ -53,6 +61,7 @@ const projects: Project[] = [
   {
     title: "Hartland Lifestyle Estate",
     summary: "375ha coastal development in Hartenbos set to house over 2000 homes.",
+    image: hartlandImage,
     details: [
       "Hartland Lifestyle Estate is situated in the heart of the Garden Route in Hartenbos on 375ha of beautiful coastal land and will house over 2000 homes eventually.",
       "Building Contractor & Developer: Dalmar Konstruksie",
@@ -63,6 +72,7 @@ const projects: Project[] = [
   {
     title: "Fynbos Heights Lifestyle Village",
     summary: "Non-profit Rotary project near Pinnacle Point Casino, Mossel Bay.",
+    image: fynbosHeightsImage,
     details: [
       "Fynbos Heights Lifestyle Village is a non-profit Rotary project just north of the Pinnacle Point Casino in Mossel Bay. On completion of phase 3 the development will consist of 197 units with a frail care unit.",
       "Consulting Engineer: V3 Consulting Engineers",
@@ -84,7 +94,7 @@ function ProjectCard({ project }: { project: Project }) {
       }`}
     >
       <img
-        src="https://placehold.co/1200x800/347f3d/347f3d"
+        src={project.image}
         alt={project.title}
         className="w-full h-56 object-cover"
         loading="lazy"
@@ -93,15 +103,25 @@ function ProjectCard({ project }: { project: Project }) {
         <h3 className="font-geologica text-xl font-bold text-charcoal">{project.title}</h3>
         <p className="mt-2 text-sm text-charcoal/70">{project.summary}</p>
 
-        {expanded && (
-          <div className="mt-4 space-y-2">
-            {project.details.map((line, i) => (
-              <p key={i} className="text-sm text-charcoal/70">
-                {line}
-              </p>
-            ))}
+        <div
+          className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+            expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div
+              className={`mt-4 space-y-2 transition-all duration-500 ease-in-out ${
+                expanded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+              }`}
+            >
+              {project.details.map((line, i) => (
+                <p key={i} className="text-sm text-charcoal/70">
+                  {line}
+                </p>
+              ))}
+            </div>
           </div>
-        )}
+        </div>
 
         <button
           type="button"

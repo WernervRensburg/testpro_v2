@@ -2,17 +2,17 @@ import about from "../assets/about2.jpg"
 
 function Description() {
   return (
-    <section id="about" className="flex justify-center bg-white">
-      <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2">
+    <section id="about" className="flex justify-center bg-white py-16 sm:py-24">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         <div className="order-2 lg:order-1">
           <img
             src={about}
             alt="Testpro Laboratory technicians at work"
-            className="w-full h-80 lg:h-full object-cover"
+            className="w-full h-80 lg:h-full object-cover rounded-lg"
             loading="lazy"
           />
         </div>
-        <div className="order-1 lg:order-2 flex flex-col justify-center px-6 py-12 sm:px-12 lg:px-16">
+        <div className="order-1 lg:order-2 flex flex-col justify-center">
           <h2 className="font-geologica text-3xl sm:text-4xl font-bold text-primary">
             About Testpro Laboratory
           </h2>
