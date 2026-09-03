@@ -10,7 +10,7 @@ function Landing() {
             <div className="w-full max-w-2xl bg-charcoal border-primary shadow-2xl max-[1099px]:border-t-4 max-[1099px]:rounded-lg min-[1100px]:border-r-4 min-[1100px]:rounded-l-lg max-[1099px]:p-8 max-[1099px]:sm:p-10 min-[1100px]:p-14 max-[1099px]:text-center min-[1100px]:text-left">
               <div className="flex items-center max-[1099px]:justify-center min-[1100px]:justify-start gap-2 text-primary text-sm font-bold uppercase tracking-widest">
                 <span className="h-px w-8 bg-primary" />
-                Responsive. Competent. Accredited.
+                Fast. Reliable. Professional.
               </div>
               <h1 className="mt-5 font-geologica text-4xl sm:text-5xl font-bold text-white leading-tight text-balance">
                 Accurate testing. Every time.
@@ -41,7 +41,7 @@ function Landing() {
         {/* Image, swap for your own photo: drop it in src/assets (e.g. hero.jpg), add
             `import heroImage from "../assets/hero.jpg";` at the top of this file, then set
             src={heroImage} below instead of the placehold.co URL. */}
-        <div className="min-[1100px]:absolute min-[1100px]:inset-0 min-[1100px]:z-0">
+        <div className="hidden sm:block min-[1100px]:absolute min-[1100px]:inset-0 min-[1100px]:z-0">
           <div className="mx-auto max-[1099px]:max-w-7xl max-[1099px]:px-4 max-[1099px]:sm:px-6 min-[1100px]:max-w-none min-[1100px]:px-0 min-[1100px]:h-full">
             <img
               src={heroImage}

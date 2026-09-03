@@ -141,9 +141,6 @@ function Services() {
         <h2 className="font-geologica text-3xl sm:text-4xl font-bold text-white text-center">
           Our Services
         </h2>
-        <p className="mt-4 text-secondary text-center max-w-2xl mx-auto">
-          Accredited materials testing across every stage of your construction project.
-        </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-6">
           {services.map((service) => (

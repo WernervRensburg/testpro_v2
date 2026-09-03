@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const TO_EMAIL = "info@testpro.co.za";
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Testpro Website <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Testpro Laboratory <onboarding@resend.dev>";
 
 function escapeHtml(value: string): string {
   return value

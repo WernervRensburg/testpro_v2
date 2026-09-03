@@ -15,15 +15,13 @@ function Contact() {
     setStatus("sending");
 
     try {
-      // TEMP: spoofed success for previewing the flow. Remove and restore the real
-      // fetch("/api/contact", ...) call below once Resend is set up.
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      // const res = await fetch("/api/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ name, email, number, subject, query }),
-      // });
-      // if (!res.ok) throw new Error("Request failed");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, number, subject, query }),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
 
       setStatus("sent");
       setName("");
