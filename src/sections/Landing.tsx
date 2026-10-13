@@ -13,7 +13,7 @@ function Landing() {
                 Fast. Reliable. Professional.
               </div>
               <h1 className="mt-5 font-geologica text-4xl sm:text-5xl font-bold text-white leading-tight text-balance">
-                Accurate testing. Every time.
+                Quality testing simplified.
               </h1>
               <p className="mt-6 text-lg text-white/80 leading-relaxed">
                 Testpro Laboratory is a privately owned civil engineering materials testing
