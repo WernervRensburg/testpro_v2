@@ -20,9 +20,9 @@ const NavBar = () => {
       <div className="bg-gradient-to-r from-primary-dark to-primary text-white text-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-1 py-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-            <a href="tel:+27446950831" className="flex items-center gap-1.5 hover:text-white/80">
+            <a href="tel:+27727169405" className="flex items-center gap-1.5 hover:text-white/80">
               <PhoneIcon className="size-4" aria-hidden="true" />
-              <span>+27 44 695 0831</span>
+              <span>+27 72 716 9405</span>
             </a>
             <a href="mailto:info@testpro.co.za" className="flex items-center gap-1.5 hover:text-white/80">
               <EnvelopeIcon className="size-4" aria-hidden="true" />

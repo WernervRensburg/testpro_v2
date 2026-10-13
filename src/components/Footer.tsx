@@ -24,8 +24,8 @@ function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <PhoneIcon className="size-4 text-primary shrink-0" aria-hidden="true" />
-                <a href="tel:+27446950831" className="hover:text-primary">
-                  +27 44 695 0831
+                <a href="tel:+27727169405" className="hover:text-primary">
+                  +27 72 716 9405
                 </a>
               </li>
               <li className="flex items-center gap-2">
