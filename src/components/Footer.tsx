@@ -1,3 +1,4 @@
+import sanasLogo from "../assets/SANAS Logo.jpg";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 const quickLinks = [
@@ -103,6 +104,12 @@ function Footer() {
               laboratory established in 2020 by Jaco van Rensburg. We pride ourselves on
               offering our customers responsive, competent, and excellent service.
             </p>
+            <img
+              src={sanasLogo}
+              alt="SANAS accredited testing laboratory, accreditation number T0952"
+              className="mt-6 h-14 w-auto rounded-md bg-white p-1.5"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

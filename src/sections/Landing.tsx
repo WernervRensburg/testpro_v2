@@ -1,4 +1,5 @@
 import heroImage from "../assets/hero.jpg"
+import sanasLogo from "../assets/SANAS Logo.jpg"
 
 function Landing() {
   return (
@@ -20,7 +21,7 @@ function Landing() {
                 laboratory based in Mossel Bay, delivering responsive, competent, and accredited
                 testing since 2020.
               </p>
-              <div className="mt-10 flex flex-wrap max-[1099px]:justify-center min-[1100px]:justify-start gap-4">
+              <div className="mt-10 flex flex-wrap items-center max-[1099px]:justify-center min-[1100px]:justify-start gap-4">
                 <a
                   href="#services"
                   className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white hover:bg-primary-dark transition-colors"
@@ -33,6 +34,13 @@ function Landing() {
                 >
                   Get a Quote
                 </a>
+                {/* SANAS badge: sits in the button row (pushed right) on desktop so the card
+                    doesn't get taller; wraps to its own centred line on smaller screens. */}
+                <img
+                  src={sanasLogo}
+                  alt="SANAS accredited testing laboratory, accreditation number T0952"
+                  className="h-12 w-auto rounded-md bg-white p-1.5 min-[1100px]:ml-auto"
+                />
               </div>
             </div>
           </div>
