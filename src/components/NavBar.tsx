@@ -1,10 +1,12 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from "@headlessui/react";
+import logo from "../assets/Testpro Logo.png";
 import { Bars3Icon, XMarkIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
+  { name: "Site Labs", href: "#site-labs" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -20,11 +22,11 @@ const NavBar = () => {
       <div className="bg-gradient-to-r from-primary-dark to-primary text-white text-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-1 py-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-            <a href="tel:+27727169405" className="flex items-center gap-1.5 hover:text-white/80">
+            <a href="tel:+27727169405" className="copyable flex items-center gap-1.5 hover:text-white/80" draggable={false}>
               <PhoneIcon className="size-4" aria-hidden="true" />
               <span>+27 72 716 9405</span>
             </a>
-            <a href="mailto:info@testpro.co.za" className="flex items-center gap-1.5 hover:text-white/80">
+            <a href="mailto:info@testpro.co.za" className="copyable flex items-center gap-1.5 hover:text-white/80" draggable={false}>
               <EnvelopeIcon className="size-4" aria-hidden="true" />
               <span>info@testpro.co.za</span>
             </a>
@@ -43,8 +45,14 @@ const NavBar = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-20 items-center justify-between">
             <div className="flex shrink-0 items-center">
-              <a href="#home" className="font-bungee text-2xl sm:text-3xl text-primary">
-                Testpro <span className="text-charcoal">Laboratory</span>
+              {/* Logo mark + wordmark. On phones the two words stack so it fits beside the
+                  menu button; on desktop the wordmark steps down a size at lg so the nav fits. */}
+              <a href="#home" className="flex items-center gap-3 font-bungee text-primary">
+                <img src={logo} alt="" className="h-11 sm:h-12 w-auto" />
+                <span className="flex flex-col text-lg leading-none sm:flex-row sm:gap-[0.3em] sm:text-3xl sm:leading-normal lg:text-2xl xl:text-3xl">
+                  <span>Testpro</span>
+                  <span className="text-charcoal">Laboratory</span>
+                </span>
               </a>
             </div>
 

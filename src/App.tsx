@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Landing from "./sections/Landing";
 import Description from "./sections/Description";
 import Services from "./sections/Services";
+import SiteLabs from "./sections/SiteLabs";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 
@@ -14,10 +15,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Landing />
-      <div className="h-2 bg-gradient-to-r from-primary-dark to-primary" />
       <Description />
-      <div className="h-2 bg-gradient-to-r from-primary-dark to-primary" />
       <Services />
+      <SiteLabs />
       <Projects />
       <Contact />
       <Footer />

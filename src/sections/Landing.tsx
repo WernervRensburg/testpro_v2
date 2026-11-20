@@ -47,7 +47,7 @@ function Landing() {
               src={heroImage}
               alt="Testpro Laboratory technician testing materials"
               className="w-full max-[1099px]:h-72 max-[1099px]:sm:h-96 min-[1100px]:h-full max-[1099px]:rounded-lg min-[1100px]:rounded-none object-cover"
-              loading="lazy"
+              fetchPriority="high"
             />
           </div>
         </div>

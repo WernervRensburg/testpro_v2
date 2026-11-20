@@ -4,6 +4,7 @@ const quickLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
+  { name: "Site Labs", href: "#site-labs" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -24,19 +25,19 @@ function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <PhoneIcon className="size-4 text-primary shrink-0" aria-hidden="true" />
-                <a href="tel:+27727169405" className="hover:text-primary">
+                <a href="tel:+27727169405" className="copyable hover:text-primary" draggable={false}>
                   +27 72 716 9405
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <EnvelopeIcon className="size-4 text-primary shrink-0" aria-hidden="true" />
-                <a href="mailto:info@testpro.co.za" className="hover:text-primary">
+                <a href="mailto:info@testpro.co.za" className="copyable hover:text-primary" draggable={false}>
                   info@testpro.co.za
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPinIcon className="size-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-                <a href="https://goo.gl/maps/e7yKJbfZ4hrRydV58" className="hover:text-primary">
+                <a href="https://goo.gl/maps/e7yKJbfZ4hrRydV58" className="copyable hover:text-primary" draggable={false}>
                   5 Voorbaai Crescent, Die Voor Bay, Mossel Bay, 6506
                 </a>
               </li>
@@ -108,7 +109,7 @@ function Footer() {
 
       <div className="bg-charcoal py-4">
         <p className="text-center text-xs text-secondary">
-          {year} Testpro Laboratory Pty Ltd. All rights reserved.
+          © {year} Testpro Laboratory Pty Ltd. All rights reserved.
         </p>
       </div>
     </footer>

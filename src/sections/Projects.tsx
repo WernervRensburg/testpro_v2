@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import n2CircleImage from "../assets/n2CircleHartland.jpg";
 import renosterbosImage from "../assets/renosterbos.jpg";
-import hartlandImage from "../assets/HartlandLifestyleEstate.png";
+import hartlandImage from "../assets/HartlandLifestyleEstate.jpg";
 import fynbosHeightsImage from "../assets/FynbosHeights.jpg";
 
 function useInView<T extends HTMLElement>() {
@@ -89,7 +89,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       ref={ref}
-      className={`bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-700 ease-out ${
+      className={`bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
@@ -142,12 +142,8 @@ function Projects() {
         <h2 className="font-geologica text-3xl sm:text-4xl font-bold text-primary text-center">
           Projects
         </h2>
-        <p className="mt-4 text-charcoal/70 text-center max-w-2xl mx-auto">
-          At Testpro Laboratory, we are committed to delivering exceptional service that meets
-          your every need. Here is a showcase of some of the work we have done.
-        </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

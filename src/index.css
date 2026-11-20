@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-geologica: 'Geologica', 'sans-serif';
-  --font-bungee: 'Bungee', 'sans-serif';
+  --font-geologica: 'Geologica', sans-serif;
+  --font-bungee: 'Bungee', sans-serif;
 
   --color-primary: #347f3d;
   --color-primary-dark: #074309;
@@ -28,4 +28,69 @@ html {
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* Page text isn't selectable and shows the normal arrow instead of the text cursor.
+   Form fields stay selectable/editable, and clickable things get the hand cursor
+   (Tailwind v4 resets buttons to the arrow by default). */
+@layer base {
+  body {
+    font-family: var(--font-geologica);
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+  }
+
+  input,
+  textarea {
+    user-select: text;
+    -webkit-user-select: text;
+    cursor: text;
+  }
+
+  a,
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+/* Contact details (phone, email, address) stay copyable. They're links, so `draggable={false}`
+   on the element plus -webkit-user-drag lets a drag select the text instead of dragging the link. */
+.copyable {
+  user-select: text;
+  -webkit-user-select: text;
+  -webkit-user-drag: none;
+}
+
+/* Contact form floating labels: the label rests inside the field like a placeholder, then
+   shrinks and moves onto the top border when the field is focused or has a value.
+   Fields use placeholder=" ", so :placeholder-shown means "empty". 1.4375rem is the
+   centre of the first text line (1px border + 10px padding + half of a 24px line). */
+.field {
+  position: relative;
+}
+
+.field-label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  transform: translateY(-50%);
+  padding: 0 0.25rem;
+  background: #fff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #4b4b4b;
+  pointer-events: none;
+  transition: top 150ms ease, font-size 150ms ease, line-height 150ms ease, color 150ms ease;
+}
+
+.field-input:focus + .field-label {
+  color: var(--color-primary);
+}
+
+.field-input:placeholder-shown:not(:focus) + .field-label {
+  top: 1.4375rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #6b7280;
 }
